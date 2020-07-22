@@ -1,24 +1,28 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class BigBrain {
 
-	public static void main(String[] args) {
-		String password = "pineapple pizza";
+	public static void main(String[] args) throws FileNotFoundException {
 		
-		Scanner scanner = new Scanner(System.in);
-		String guess;
+		Scanner scanner = new Scanner(new File("student.txt"));
+			
+		List<String> students = new ArrayList<String>();
 		
-		do {
-			
-			System.out.println("What's the password:");
-			guess = scanner.nextLine();
-			
-		} while (!guess.equals(password));
-
-		System.out.println("You are correct!");
+		
+		while(scanner.hasNextLine()) {
+			students.add(scanner.nextLine());
+		}
+		
+		for(int i = 0; i < students.size(); i++) {
+			System.out.println("name: " + students.get(i));
+		}
+		
 		scanner.close();
 		
 		
 	}
-
 }
