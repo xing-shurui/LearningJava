@@ -2,6 +2,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
@@ -9,22 +10,22 @@ import java.util.Scanner;
 public class BigBrain {
 
 	public static void main(String[] args) {
-		try {
-			Scanner scanner =new Scanner(new File("test"));
-		} catch (FileNotFoundException e) {
-			
-			e.printStackTrace();
-		}
-			
 		LinkedList<String> names = new LinkedList<String>();
 		
 		names.push("Caleb");
 		names.push("Peter");
 		names.push("Sally");
 		
-		System.out.println(names.pop());
-		System.out.println(names.pop());
-		System.out.println(names.pop());
+		Iterator<String> it = names.iterator();
 		
+		while(it.hasNext()) {
+			System.out.println(it.next());
+		}
+		
+		names.add(2, "susan");
+		
+		for(String s : names) {
+			System.out.println(s);
+		}
 	}
 }
