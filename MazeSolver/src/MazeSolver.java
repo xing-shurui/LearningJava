@@ -3,12 +3,13 @@ import java.util.LinkedList;
 public class MazeSolver {
 	
 	static int[][] maze = {
-			{1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0},
-			{1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0},
-			{1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0},
-			{1, 1, 1, 2, 0, 1, 0, 1, 0, 1, 1},
-			{1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1},
-			{1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1}
+			{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+			{1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+			{1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+			{1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1},
+			{1, 0, 1, 1, 1, 1, 1, 1, 2, 0, 1},
+			{1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+			{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
 	};
 	//0 = wall
 	//1 = path
@@ -17,7 +18,7 @@ public class MazeSolver {
 	static LinkedList<Position> path = new LinkedList<Position>();
 	
 	public static void main(String[] args) {
-		Position p = new Position(4, 8);
+		Position p = new Position(0, 10);
 		path.push(p);
 		
 		//x = column
